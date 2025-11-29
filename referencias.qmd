@@ -1,0 +1,19 @@
+---
+title: "Referencias"
+---
+
+## Bibliografía
+
+*Sección en desarrollo*
+
+## Datos
+
+- **Landsat**: USGS/NASA Landsat Program
+- **CR2MET**: Centro de Ciencia del Clima y la Resiliencia (CR2)
+- **Límites SNASPE**: CONAF
+
+## Recursos
+
+- [Google Earth Engine](https://earthengine.google.com/)
+- [CR2 - Datos climáticos](https://www.cr2.cl/)
+- [CONAF - SNASPE](https://www.conaf.cl/)

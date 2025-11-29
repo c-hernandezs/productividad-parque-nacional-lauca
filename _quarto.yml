@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Productividad Parque Nacional Lauca"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: area-estudio.qmd
+        text: Área de Estudio
+      - href: metodos.qmd
+        text: Métodos
+      - href: resultados.qmd
+        text: Resultados
+      - href: referencias.qmd
+        text: Referencias
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3

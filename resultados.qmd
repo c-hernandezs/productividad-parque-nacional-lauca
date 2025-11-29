@@ -1,0 +1,65 @@
+---
+title: "Resultados"
+---
+
+## Series temporales de NDVI
+
+```{r}
+#| label: serie-ndvi
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para visualizar serie temporal de NDVI
+```
+
+## Ciclo estacional
+
+```{r}
+#| label: ciclo-estacional
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para visualizar ciclo estacional
+```
+
+## Variables climáticas
+
+### Precipitación
+
+```{r}
+#| label: precipitacion
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para visualizar precipitación
+```
+
+### Temperatura
+
+```{r}
+#| label: temperatura
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para visualizar temperatura
+```
+
+## Relación NDVI-Clima
+
+```{r}
+#| label: correlaciones
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para visualizar correlaciones
+```

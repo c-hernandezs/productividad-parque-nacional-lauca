@@ -1,0 +1,38 @@
+/* Estilos personalizados para el sitio */
+
+/* Colores del altiplano */
+:root {
+  --color-primary: #2d5016;
+  --color-secondary: #8b7355;
+  --color-accent: #4a7c59;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--color-primary) !important;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: var(--color-primary);
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Tablas */
+table {
+  margin: 1.5em 0;
+}
+
+/* Código */
+pre {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}

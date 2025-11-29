@@ -1,0 +1,52 @@
+---
+title: "Métodos"
+---
+
+## Procesamiento de imágenes satelitales
+
+### Obtención de datos NDVI
+
+Las imágenes Landsat fueron procesadas en Google Earth Engine para obtener series temporales de NDVI (Índice de Vegetación de Diferencia Normalizada):
+
+$$NDVI = \frac{NIR - RED}{NIR + RED}$$
+
+Donde NIR corresponde a la banda del infrarrojo cercano (B5) y RED a la banda del rojo (B4).
+
+### Filtrado y composición
+
+- Máscara de nubes y sombras
+- Composiciones mensuales mediante medianas
+- Período de análisis: 2014-2024
+
+## Datos climáticos
+
+Los datos de precipitación y temperatura provienen de CR2MET (Centro de Ciencia del Clima y la Resiliencia), un producto de reanálisis climático para Chile.
+
+## Análisis estadístico
+
+### Series temporales
+
+- Agregación mensual de NDVI
+- Cálculo de ciclos estacionales
+- Análisis de anomalías
+
+### Relación clima-vegetación
+
+- Correlaciones NDVI-precipitación
+- Correlaciones NDVI-temperatura
+- Análisis de rezagos temporales
+
+## Software utilizado
+
+```{r}
+#| label: software
+#| echo: false
+#| eval: false
+
+# Paquetes principales
+# - rgee: conexión con Google Earth Engine
+# - terra: procesamiento de datos raster
+# - sf: datos espaciales vectoriales
+# - tidyverse: manipulación y visualización de datos
+# - ggplot2: visualización
+```

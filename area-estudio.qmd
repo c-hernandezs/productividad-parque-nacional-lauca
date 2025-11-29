@@ -1,0 +1,46 @@
+---
+title: "Área de Estudio"
+---
+
+## Parque Nacional Lauca
+
+El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el extremo norte de Chile. Forma parte de la Reserva de la Biósfera Lauca y se caracteriza por su paisaje altoandino con altitudes que varían entre 3.200 y 6.342 m.s.n.m.
+
+## Ubicación
+
+```{r}
+#| label: mapa-ubicacion
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# Código para generar mapa de ubicación
+```
+
+## Características ambientales
+
+### Clima
+
+El área presenta un clima de altura con:
+
+- Precipitaciones concentradas en verano (diciembre-marzo)
+- Temperaturas medias anuales bajas
+- Alta radiación solar
+- Marcada amplitud térmica diaria
+
+### Vegetación
+
+Los principales tipos de cobertura vegetal incluyen:
+
+- **Bofedales**: humedales altoandinos de alta productividad
+- **Matorrales**: dominados por especies arbustivas
+- **Pastizales**: vegetación herbácea de altura
+
+## Datos utilizados
+
+| Fuente | Variable | Resolución | Período |
+|--------|----------|------------|---------|
+| Landsat | NDVI | 30 m / 16 días | 2014-2024 |
+| CR2MET | Precipitación | 5 km / mensual | 2014-2024 |
+| CR2MET | Temperatura | 5 km / mensual | 2014-2024 |

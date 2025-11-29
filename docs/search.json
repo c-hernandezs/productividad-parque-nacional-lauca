@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "resultados.html#ciclo-estacional",
+    "href": "resultados.html#ciclo-estacional",
+    "title": "Resultados",
+    "section": "Ciclo estacional",
+    "text": "Ciclo estacional"
+  },
+  {
+    "objectID": "resultados.html#variables-climáticas",
+    "href": "resultados.html#variables-climáticas",
+    "title": "Resultados",
+    "section": "Variables climáticas",
+    "text": "Variables climáticas\n\nPrecipitación\n\n\nTemperatura"
+  },
+  {
+    "objectID": "resultados.html#relación-ndvi-clima",
+    "href": "resultados.html#relación-ndvi-clima",
+    "title": "Resultados",
+    "section": "Relación NDVI-Clima",
+    "text": "Relación NDVI-Clima"
+  },
+  {
+    "objectID": "metodos.html",
+    "href": "metodos.html",
+    "title": "Métodos",
+    "section": "",
+    "text": "Las imágenes Landsat fueron procesadas en Google Earth Engine para obtener series temporales de NDVI (Índice de Vegetación de Diferencia Normalizada):\n\\[NDVI = \\frac{NIR - RED}{NIR + RED}\\]\nDonde NIR corresponde a la banda del infrarrojo cercano (B5) y RED a la banda del rojo (B4).\n\n\n\n\nMáscara de nubes y sombras\nComposiciones mensuales mediante medianas\nPeríodo de análisis: 2014-2024"
+  },
+  {
+    "objectID": "metodos.html#procesamiento-de-imágenes-satelitales",
+    "href": "metodos.html#procesamiento-de-imágenes-satelitales",
+    "title": "Métodos",
+    "section": "",
+    "text": "Las imágenes Landsat fueron procesadas en Google Earth Engine para obtener series temporales de NDVI (Índice de Vegetación de Diferencia Normalizada):\n\\[NDVI = \\frac{NIR - RED}{NIR + RED}\\]\nDonde NIR corresponde a la banda del infrarrojo cercano (B5) y RED a la banda del rojo (B4).\n\n\n\n\nMáscara de nubes y sombras\nComposiciones mensuales mediante medianas\nPeríodo de análisis: 2014-2024"
+  },
+  {
+    "objectID": "metodos.html#datos-climáticos",
+    "href": "metodos.html#datos-climáticos",
+    "title": "Métodos",
+    "section": "Datos climáticos",
+    "text": "Datos climáticos\nLos datos de precipitación y temperatura provienen de CR2MET (Centro de Ciencia del Clima y la Resiliencia), un producto de reanálisis climático para Chile."
+  },
+  {
+    "objectID": "metodos.html#análisis-estadístico",
+    "href": "metodos.html#análisis-estadístico",
+    "title": "Métodos",
+    "section": "Análisis estadístico",
+    "text": "Análisis estadístico\n\nSeries temporales\n\nAgregación mensual de NDVI\nCálculo de ciclos estacionales\nAnálisis de anomalías\n\n\n\nRelación clima-vegetación\n\nCorrelaciones NDVI-precipitación\nCorrelaciones NDVI-temperatura\nAnálisis de rezagos temporales"
+  },
+  {
+    "objectID": "metodos.html#software-utilizado",
+    "href": "metodos.html#software-utilizado",
+    "title": "Métodos",
+    "section": "Software utilizado",
+    "text": "Software utilizado"
+  },
+  {
+    "objectID": "area-estudio.html",
+    "href": "area-estudio.html",
+    "title": "Área de Estudio",
+    "section": "",
+    "text": "El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el extremo norte de Chile. Forma parte de la Reserva de la Biósfera Lauca y se caracteriza por su paisaje altoandino con altitudes que varían entre 3.200 y 6.342 m.s.n.m."
+  },
+  {
+    "objectID": "area-estudio.html#parque-nacional-lauca",
+    "href": "area-estudio.html#parque-nacional-lauca",
+    "title": "Área de Estudio",
+    "section": "",
+    "text": "El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el extremo norte de Chile. Forma parte de la Reserva de la Biósfera Lauca y se caracteriza por su paisaje altoandino con altitudes que varían entre 3.200 y 6.342 m.s.n.m."
+  },
+  {
+    "objectID": "area-estudio.html#ubicación",
+    "href": "area-estudio.html#ubicación",
+    "title": "Área de Estudio",
+    "section": "Ubicación",
+    "text": "Ubicación"
+  },
+  {
+    "objectID": "area-estudio.html#características-ambientales",
+    "href": "area-estudio.html#características-ambientales",
+    "title": "Área de Estudio",
+    "section": "Características ambientales",
+    "text": "Características ambientales\n\nClima\nEl área presenta un clima de altura con:\n\nPrecipitaciones concentradas en verano (diciembre-marzo)\nTemperaturas medias anuales bajas\nAlta radiación solar\nMarcada amplitud térmica diaria\n\n\n\nVegetación\nLos principales tipos de cobertura vegetal incluyen:\n\nBofedales: humedales altoandinos de alta productividad\nMatorrales: dominados por especies arbustivas\nPastizales: vegetación herbácea de altura"
+  },
+  {
+    "objectID": "area-estudio.html#datos-utilizados",
+    "href": "area-estudio.html#datos-utilizados",
+    "title": "Área de Estudio",
+    "section": "Datos utilizados",
+    "text": "Datos utilizados\n\n\n\nFuente\nVariable\nResolución\nPeríodo\n\n\n\n\nLandsat\nNDVI\n30 m / 16 días\n2014-2024\n\n\nCR2MET\nPrecipitación\n5 km / mensual\n2014-2024\n\n\nCR2MET\nTemperatura\n5 km / mensual\n2014-2024"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Productividad Vegetal en Parque Nacional Lauca",
+    "section": "",
+    "text": "Este sitio presenta los resultados del análisis de productividad vegetal y fenología en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura."
+  },
+  {
+    "objectID": "index.html#presentación",
+    "href": "index.html#presentación",
+    "title": "Productividad Vegetal en Parque Nacional Lauca",
+    "section": "",
+    "text": "Este sitio presenta los resultados del análisis de productividad vegetal y fenología en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura."
+  },
+  {
+    "objectID": "index.html#objetivos",
+    "href": "index.html#objetivos",
+    "title": "Productividad Vegetal en Parque Nacional Lauca",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nCaracterizar los patrones fenológicos de la vegetación altoandina\nAnalizar la variabilidad interanual de la productividad vegetal\nEvaluar las relaciones entre NDVI y variables climáticas (precipitación y temperatura)"
+  },
+  {
+    "objectID": "index.html#contexto",
+    "href": "index.html#contexto",
+    "title": "Productividad Vegetal en Parque Nacional Lauca",
+    "section": "Contexto",
+    "text": "Contexto\nEl Parque Nacional Lauca, parte de la Reserva de la Biósfera Lauca, alberga ecosistemas de alto valor ecológico incluyendo bofedales, matorrales y pastizales de altura. Comprender la dinámica de estos ecosistemas es fundamental para su conservación y manejo.\n\nProyecto desarrollado para el curso AGP3141 - Visualización de Datos Ambientales en R\nMagíster en Recursos Naturales - Pontificia Universidad Católica de Chile"
+  },
+  {
+    "objectID": "referencias.html",
+    "href": "referencias.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "Sección en desarrollo"
+  },
+  {
+    "objectID": "referencias.html#bibliografía",
+    "href": "referencias.html#bibliografía",
+    "title": "Referencias",
+    "section": "",
+    "text": "Sección en desarrollo"
+  },
+  {
+    "objectID": "referencias.html#datos",
+    "href": "referencias.html#datos",
+    "title": "Referencias",
+    "section": "Datos",
+    "text": "Datos\n\nLandsat: USGS/NASA Landsat Program\nCR2MET: Centro de Ciencia del Clima y la Resiliencia (CR2)\nLímites SNASPE: CONAF"
+  },
+  {
+    "objectID": "referencias.html#recursos",
+    "href": "referencias.html#recursos",
+    "title": "Referencias",
+    "section": "Recursos",
+    "text": "Recursos\n\nGoogle Earth Engine\nCR2 - Datos climáticos\nCONAF - SNASPE"
+  }
+]
