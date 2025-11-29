@@ -1,0 +1,22 @@
+# Archivos de presentación
+*.pptx
+*.ppt
+
+# Archivos raster
+*.tif
+*.tiff
+
+# Archivos generados
+*.html
+_site/
+docs/
+
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Archivos pesados
+*.zip
+*.pdf
