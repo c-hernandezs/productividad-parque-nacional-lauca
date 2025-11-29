@@ -1,8 +1,17 @@
 library(sf)
 library(tidyverse)
+library(plotly)
 
 area_estudio <- st_read("datos/limites/snaspe_lauca.shp")
 cob_suelo <- st_read("datos/catastro/catastro_lauca_uso_filter.shp")
+
+colores_cobertura <- c(
+  "Bosques" = "#228B22",
+  "Humedales" = "#6495ED",
+  "Praderas y Matorrales" = "#D2B48C"
+)
+
+
 
 names(cob_suelo)
 head(cob_suelo)
@@ -21,15 +30,12 @@ resumen_cob <- cob_suelo %>%
 
 resumen_cob
 
-# Gráfico de torta
-ggplot(resumen_cob, aes(x = "", y = porcentaje, fill = USO)) +
-  geom_col(width = 1) +
-  coord_polar(theta = "y") +
-  scale_fill_manual(values = c("Bosques" = "#228B22",
-                               "Humedales" = "#4169E1",
-                               "Praderas y Matorrales" = "#9ACD32")) +
-  labs(fill = "Cobertura") +
-  theme_void() +
-  geom_text(aes(label = paste0(porcentaje, "%")),
-            position = position_stack(vjust = 0.5),
-            color = "white", fontface = "bold")
+## grafico de torta ----
+
+plot_ly(resumen_cob,
+        labels = ~USO,
+        values = ~area_ha,
+        type = 'pie',
+        marker = list(colors = c("#228B22", "#6495ED", "#D2B48C")),
+        textinfo = 'label+percent',
+        hovertemplate = "%{label}<br>%{value:.0f} ha<br>%{percent}<extra></extra>")
