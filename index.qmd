@@ -5,19 +5,19 @@ subtitle: "Análisis de fenología y productividad en ecosistemas altoandinos me
 
 ## Presentación
 
-Este sitio presenta los resultados del análisis de productividad vegetal y fenología en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura.
+Este sitio presenta los resultados del análisis de productividad vegetal en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura.
 
 ## Objetivos
 
-- Caracterizar los patrones fenológicos de la vegetación altoandina
-- Analizar la variabilidad interanual de la productividad vegetal
-- Evaluar las relaciones entre NDVI y variables climáticas (precipitación y temperatura)
+-   Caracterizar los patrones de productividad de la vegetación altoandina
+-   Analizar la variabilidad interanual de la productividad vegetal
+-   Evaluar las relaciones entre NDVI y variables climáticas (precipitación y temperatura)
 
 ## Contexto
 
 El Parque Nacional Lauca, parte de la Reserva de la Biósfera Lauca, alberga ecosistemas de alto valor ecológico incluyendo bofedales, matorrales y pastizales de altura. Comprender la dinámica de estos ecosistemas es fundamental para su conservación y manejo.
 
----
+------------------------------------------------------------------------
 
 *Proyecto desarrollado para el curso AGP3141 - Visualización de Datos Ambientales en R*
 

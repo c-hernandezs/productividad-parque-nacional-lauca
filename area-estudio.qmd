@@ -13,9 +13,16 @@ El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el ext
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
 
-# Código para generar mapa de ubicación
+library(mapview)
+library(sf)
+
+area_estudio <- st_read("datos/limites/snaspe_lauca.shp")
+
+mapview(area_estudio, 
+        col.regions = "#00CD66",
+        layer.name = "Parque Nacional Lauca",
+        map.types = c("Esri.WorldImagery", "OpenStreetMap", "OpenTopoMap"))
 ```
 
 ## Características ambientales
@@ -24,23 +31,64 @@ El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el ext
 
 El área presenta un clima de altura con:
 
-- Precipitaciones concentradas en verano (diciembre-marzo)
-- Temperaturas medias anuales bajas
-- Alta radiación solar
-- Marcada amplitud térmica diaria
+-   Precipitaciones concentradas en verano (diciembre-marzo)
+-   Temperaturas medias anuales bajas
+-   Alta radiación solar
+-   Marcada amplitud térmica diaria
 
 ### Vegetación
 
 Los principales tipos de cobertura vegetal incluyen:
 
-- **Bofedales**: humedales altoandinos de alta productividad
-- **Matorrales**: dominados por especies arbustivas
-- **Pastizales**: vegetación herbácea de altura
+-   **Bofedales**: humedales altoandinos de alta productividad
+-   **Matorrales**: dominados por especies arbustivas
+-   **Pastizales**: vegetación herbácea de altura
+
+```{r}
+#| label: grafico-cobertura
+#| echo: false
+#| message: false
+#| warning: false
+
+library(sf)
+library(tidyverse)
+library(plotly)
+
+area_estudio <- st_read("datos/limites/snaspe_lauca.shp")
+cob_suelo <- st_read("datos/catastro/catastro_lauca_uso_filter.shp")
+
+names(cob_suelo)
+head(cob_suelo)
+
+unique(cob_suelo$USO)
+
+cob_suelo <- cob_suelo %>%
+  mutate(area_ha = as.numeric(st_area(geometry)) / 10000)
+
+resumen_cob <- cob_suelo %>%
+  st_drop_geometry() %>%
+  group_by(USO) %>%
+  summarise(area_ha = sum(area_ha)) %>%
+  mutate(porcentaje = round(area_ha / sum(area_ha) * 100, 1))
+
+resumen_cob
+
+## grafico de torta ----
+
+plot_ly(resumen_cob, 
+        labels = ~USO, 
+        values = ~area_ha, 
+        type = 'pie',
+        marker = list(colors = c("#228B22", "#6495ED", "#D2B48C")),
+        textinfo = 'label+percent',
+        hovertemplate = "%{label}<br>%{value:.0f} ha<br>%{percent}<extra></extra>")
+
+```
 
 ## Datos utilizados
 
-| Fuente | Variable | Resolución | Período |
-|--------|----------|------------|---------|
-| Landsat | NDVI | 30 m / 16 días | 2014-2024 |
-| CR2MET | Precipitación | 5 km / mensual | 2014-2024 |
-| CR2MET | Temperatura | 5 km / mensual | 2014-2024 |
+| Fuente             | Variable      | Resolución     | Período   |
+|--------------------|---------------|----------------|-----------|
+| Landsat            | NDVI          | 30 m / 16 días | 2014-2024 |
+| CR2MET             | Precipitación | 5 km / mensual | 2014-2024 |
+| Cobertura de suelo | LULC          | km\^2          | 2015      |

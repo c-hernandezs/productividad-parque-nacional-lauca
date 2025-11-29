@@ -74,21 +74,21 @@
     "href": "area-estudio.html#ubicación",
     "title": "Área de Estudio",
     "section": "Ubicación",
-    "text": "Ubicación"
+    "text": "Ubicación\n\n\nReading layer `snaspe_lauca' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\limites\\snaspe_lauca.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 1 feature and 12 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495986.5 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S"
   },
   {
     "objectID": "area-estudio.html#características-ambientales",
     "href": "area-estudio.html#características-ambientales",
     "title": "Área de Estudio",
     "section": "Características ambientales",
-    "text": "Características ambientales\n\nClima\nEl área presenta un clima de altura con:\n\nPrecipitaciones concentradas en verano (diciembre-marzo)\nTemperaturas medias anuales bajas\nAlta radiación solar\nMarcada amplitud térmica diaria\n\n\n\nVegetación\nLos principales tipos de cobertura vegetal incluyen:\n\nBofedales: humedales altoandinos de alta productividad\nMatorrales: dominados por especies arbustivas\nPastizales: vegetación herbácea de altura"
+    "text": "Características ambientales\n\nClima\nEl área presenta un clima de altura con:\n\nPrecipitaciones concentradas en verano (diciembre-marzo)\nTemperaturas medias anuales bajas\nAlta radiación solar\nMarcada amplitud térmica diaria\n\n\n\nVegetación\nLos principales tipos de cobertura vegetal incluyen:\n\nBofedales: humedales altoandinos de alta productividad\nMatorrales: dominados por especies arbustivas\nPastizales: vegetación herbácea de altura\n\n\n\nReading layer `snaspe_lauca' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\limites\\snaspe_lauca.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 1 feature and 12 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495986.5 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n\n\nReading layer `catastro_lauca_uso_filter' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\catastro\\catastro_lauca_uso_filter.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 3 features and 1 field\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495520 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n\n\n[1] \"USO\"      \"geometry\"\n\n\nSimple feature collection with 3 features and 1 field\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495520 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n                    USO                       geometry\n1 Praderas y Matorrales MULTIPOLYGON (((433458 7985...\n2             Humedales MULTIPOLYGON (((451291.2 79...\n3               Bosques MULTIPOLYGON (((449414.7 79...\n\n\n[1] \"Praderas y Matorrales\" \"Humedales\"             \"Bosques\"              \n\n\n# A tibble: 3 × 3\n  USO                   area_ha porcentaje\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;\n1 Bosques                 1761.        1.6\n2 Humedales               5259.        4.8\n3 Praderas y Matorrales 103110.       93.6"
   },
   {
     "objectID": "area-estudio.html#datos-utilizados",
     "href": "area-estudio.html#datos-utilizados",
     "title": "Área de Estudio",
     "section": "Datos utilizados",
-    "text": "Datos utilizados\n\n\n\nFuente\nVariable\nResolución\nPeríodo\n\n\n\n\nLandsat\nNDVI\n30 m / 16 días\n2014-2024\n\n\nCR2MET\nPrecipitación\n5 km / mensual\n2014-2024\n\n\nCR2MET\nTemperatura\n5 km / mensual\n2014-2024"
+    "text": "Datos utilizados\n\n\n\nFuente\nVariable\nResolución\nPeríodo\n\n\n\n\nLandsat\nNDVI\n30 m / 16 días\n2014-2024\n\n\nCR2MET\nPrecipitación\n5 km / mensual\n2014-2024\n\n\nCobertura de suelo\nLULC\nkm^2\n2015"
   },
   {
     "objectID": "index.html",
