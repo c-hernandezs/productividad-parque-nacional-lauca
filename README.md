@@ -1,4 +1,4 @@
-# Visualización y Análisis de la Dinámica Fenológica de Ecosistemas Altiplánicos mediante Series Temporales NDVI: Parque Nacional Lauca
+# Visualización y Análisis de la Dinámica de productividad de Ecosistemas Altiplánicos mediante Series Temporales NDVI: Parque Nacional Lauca
 
 ## Pregunta de Investigación
 ¿Cómo varían los patrones de productividad de la vegetación entre diferentes tipos de cobertura vegetal en el Parque Nacional Lauca, y cuál es su relación con la precipitación y temperatura en el período 2014-2024?
