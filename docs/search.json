@@ -187,5 +187,26 @@
     "title": "Referencias",
     "section": "Imágenes",
     "text": "Imágenes\n\nLago Chungará, Parque Nacional Lauca. Fuente: CONAF/SERNATUR\nPanorámica Parque Nacional Lauca. Fuente: Viajar es Descubrir\nBofedales altoandinos. Fuente: Atakama Outdoor\nReserva de la Biósfera Lauca. Fuente: BioGeoLab PUCV\nVideo Parque Nacional Lauca. Fuente: Chile Travel"
+  },
+  {
+    "objectID": "conclusiones.html",
+    "href": "conclusiones.html",
+    "title": "Conclusiones",
+    "section": "",
+    "text": "El análisis de series temporales de NDVI (2014-2024) en el Parque Nacional Lauca revela patrones distintivos en la respuesta de los ecosistemas altiplánicos a la variabilidad climática."
+  },
+  {
+    "objectID": "conclusiones.html#principales-hallazgos",
+    "href": "conclusiones.html#principales-hallazgos",
+    "title": "Conclusiones",
+    "section": "Principales hallazgos",
+    "text": "Principales hallazgos\n\nProductividad y vulnerabilidad de bofedales\nLos humedales alto-andinos (bofedales) presentan los valores más altos de NDVI, reflejando su rol como ecosistemas de alta productividad en el altiplano. Sin embargo, su mayor variabilidad interanual sugiere una alta sensibilidad a las fluctuaciones en la disponibilidad hídrica, lo que los posiciona como ecosistemas vulnerables ante escenarios de cambio climático.\n\n\nDesfase en la respuesta vegetal\nSe identificó un desfase temporal de aproximadamente un mes entre el peak de precipitación (enero-febrero) y el máximo de productividad vegetal (marzo-abril). Este patrón es consistente con los procesos fisiológicos de absorción y uso del agua por parte de la vegetación altiplánica.\n\n\nEstabilidad de praderas y matorrales\nLas praderas y matorrales mantienen valores de NDVI bajos y estables durante todo el año, independiente de las variaciones en precipitación. Esta estrategia conservadora les permite persistir en condiciones de aridez, aunque limita su capacidad de respuesta ante pulsos de recursos."
+  },
+  {
+    "objectID": "conclusiones.html#implicancias-para-la-conservación",
+    "href": "conclusiones.html#implicancias-para-la-conservación",
+    "title": "Conclusiones",
+    "section": "Implicancias para la conservación",
+    "text": "Implicancias para la conservación\nEstos resultados destacan la importancia de los bofedales como indicadores de salud ecosistémica en el altiplano. Su monitoreo mediante sensores remotos puede servir como alerta temprana de estrés hídrico en el Parque Nacional Lauca y otras áreas protegidas del norte de Chile."
   }
 ]
