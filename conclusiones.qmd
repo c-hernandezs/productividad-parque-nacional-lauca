@@ -1,0 +1,23 @@
+---
+title: "Conclusiones"
+---
+
+El análisis de series temporales de NDVI (2014-2024) en el Parque Nacional Lauca revela patrones distintivos en la respuesta de los ecosistemas altiplánicos a la variabilidad climática.
+
+## Principales hallazgos
+
+### Productividad y vulnerabilidad de bofedales
+
+Los humedales alto-andinos (bofedales) presentan los valores más altos de NDVI, reflejando su rol como ecosistemas de alta productividad en el altiplano. Sin embargo, su mayor variabilidad interanual sugiere una alta sensibilidad a las fluctuaciones en la disponibilidad hídrica, lo que los posiciona como ecosistemas vulnerables ante escenarios de cambio climático.
+
+### Desfase en la respuesta vegetal
+
+Se identificó un desfase temporal de aproximadamente un mes entre el peak de precipitación (enero-febrero) y el máximo de productividad vegetal (marzo-abril). Este patrón es consistente con los procesos fisiológicos de absorción y uso del agua por parte de la vegetación altiplánica.
+
+### Estabilidad de praderas y matorrales
+
+Las praderas y matorrales mantienen valores de NDVI bajos y estables durante todo el año, independiente de las variaciones en precipitación. Esta estrategia conservadora les permite persistir en condiciones de aridez, aunque limita su capacidad de respuesta ante pulsos de recursos.
+
+## Implicancias para la conservación
+
+Estos resultados destacan la importancia de los bofedales como indicadores de salud ecosistémica en el altiplano. Su monitoreo mediante sensores remotos puede servir como alerta temprana de estrés hídrico en el Parque Nacional Lauca y otras áreas protegidas del norte de Chile.

@@ -6,16 +6,18 @@ website:
   title: "Productividad Parque Nacional Lauca"
   navbar:
     left:
-      - href: index.qmd
-        text: Inicio
-      - href: area-estudio.qmd
-        text: Área de Estudio
-      - href: metodos.qmd
-        text: Métodos
-      - href: resultados.qmd
-        text: Resultados
-      - href: referencias.qmd
-        text: Referencias
+    - href: index.qmd
+      text: Inicio
+    - href: area-estudio.qmd
+      text: Área de Estudio
+    - href: metodos.qmd
+      text: Métodos
+    - href: resultados.qmd
+      text: Resultados
+    - href: conclusiones.qmd
+      text: Conclusiones
+    - href: referencias.qmd
+      text: Referencias
 
 format:
   html:
