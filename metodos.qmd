@@ -32,21 +32,14 @@ Los datos de precipitación y temperatura provienen de CR2MET (Centro de Ciencia
 
 ### Relación clima-vegetación
 
-- Correlaciones NDVI-precipitación
-- Correlaciones NDVI-temperatura
-- Análisis de rezagos temporales
+- Visualización de patrones estacionales.
 
-## Software utilizado
+## Software 
 
-```{r}
-#| label: software
-#| echo: false
-#| eval: false
+El análisis se realizó utilizando los siguientes paquetes de R:
 
-# Paquetes principales
-# - rgee: conexión con Google Earth Engine
-# - terra: procesamiento de datos raster
-# - sf: datos espaciales vectoriales
-# - tidyverse: manipulación y visualización de datos
-# - ggplot2: visualización
-```
+- **rgee**: conexión con Google Earth Engine
+- **terra**: procesamiento de datos raster
+- **sf**: datos espaciales vectoriales
+- **tidyverse**: manipulación y visualización de datos
+- **ggplot2**: visualización

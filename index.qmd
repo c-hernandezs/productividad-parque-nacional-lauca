@@ -3,15 +3,17 @@ title: "Productividad Vegetal en Parque Nacional Lauca"
 subtitle: "Análisis de fenología y productividad en ecosistemas altoandinos mediante teledetección"
 ---
 
+![Lago Chungará, Parque Nacional Lauca. Foto: SERNATUR/CONAF](https://www.conaf.cl/wp-content/uploads/2024/01/Lago-Chungara-PArque-Nacional-Lauca-sernatur-ATR22-1.jpg)
+
 ## Presentación
 
-Este sitio presenta los resultados del análisis de productividad vegetal en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura.
+Este sitio presenta los resultados del análisis de productividad vegetal en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación.
 
 ## Objetivos
 
 -   Caracterizar los patrones de productividad de la vegetación altoandina
 -   Analizar la variabilidad interanual de la productividad vegetal
--   Evaluar las relaciones entre NDVI y variables climáticas (precipitación y temperatura)
+-   Evaluar las relaciones entre NDVI y variables climática (precipitación)
 
 ## Contexto
 

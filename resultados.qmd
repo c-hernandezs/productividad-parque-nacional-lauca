@@ -2,64 +2,355 @@
 title: "Resultados"
 ---
 
+## Variable climática
+
+### Precipitación
+
+La precipitación en el Parque Nacional Lauca presenta un marcado patrón estacional, concentrándose en los meses de verano (diciembre-marzo) debido al "invierno altiplanico".
+
+#### Serie temporal
+
+```{r}
+#| label: serie-precipitacion
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(plotly)
+
+precipitaciones <- read_csv("datos/clima/EC_precipitaciones_mensual_ajata.csv")
+
+precipitaciones <- precipitaciones |>
+  mutate(mes = as.numeric(mes)) |>
+  group_by(agno, mes) |>
+  summarise(precipitacion_acumulada_mensual = sum(valor, na.rm = TRUE),
+            .groups = "drop") |>
+  mutate(fecha = make_date(agno, mes, 1))
+
+precipitaciones_reciente <- precipitaciones |>
+  filter(agno >= 2014)
+
+plot_ly(
+  precipitaciones_reciente,
+  x = ~fecha,
+  y = ~precipitacion_acumulada_mensual,
+  type = "bar",
+  marker = list(
+    color = ~precipitacion_acumulada_mensual,
+    colorscale = list(c(0, "#deebf7"), c(1, "#08519c")),
+    showscale = FALSE
+  )
+) |>
+  layout(
+    xaxis = list(title = "", rangeslider = list(visible = TRUE)),
+    yaxis = list(title = "Precipitación (mm)")
+  )
+```
+
+#### Estacionalidad
+
+```{r}
+#| label: estacionalidad-precipitacion
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Estacionalidad de precipitación en Parque Nacional Lauca (1983-2024)"
+
+estacionalidad <- precipitaciones |>
+  group_by(mes) |>
+  summarise(
+    promedio = mean(precipitacion_acumulada_mensual),
+    sd = sd(precipitacion_acumulada_mensual)
+  )
+
+promedio_anual <- mean(estacionalidad$promedio)
+
+ggplot(estacionalidad, aes(x = factor(mes), y = promedio, fill = promedio)) +
+  annotate("rect", xmin = 0.5, xmax = 3.5, ymin = 0, ymax = Inf,
+           fill = "#08519c", alpha = 0.08) +
+  geom_col(color = "white") +
+  geom_text(aes(label = round(promedio, 1)),
+            vjust = -0.5, size = 2.8, color = "black") +
+  geom_hline(yintercept = promedio_anual, linetype = "dashed", color = "black", linewidth = 0.5) +
+  scale_fill_gradient(low = "#deebf7", high = "#08519c") +
+  scale_x_discrete(labels = c("Ene", "Feb", "Mar", "Abr", "May", "Jun",
+                              "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+  labs(x = NULL, y = "Precipitación promedio (mm)",
+       caption = "Línea punteada: promedio mensual. Sombreado: estación lluviosa (Ene-Mar)") +
+  theme_minimal() +
+  guides(fill = "none") +
+  theme(
+    plot.caption = element_text(color = "black", size = 8),
+    axis.line = element_line(color = "black"),
+    panel.grid = element_blank()
+  )
+```
+
 ## Series temporales de NDVI
+
+El Índice de Vegetación de Diferencia Normalizada (NDVI) permite cuantificar la productividad vegetal a partir de imágenes satelitales. Valores más altos indican mayor actividad fotosintética y biomasa verde.
+
+```{r}
+#| label: setup-ndvi
+#| echo: false
+#| message: false
+#| warning: false
+
+library(terra)
+library(ggplot2)
+library(sf)
+library(tidyverse)
+library(tidyterra)
+library(patchwork)
+library(exactextractr)
+library(plotly)
+
+ndvi_lauca <- rast("datos/ndvi/ndvi_lauca_2014_2024.tif")
+cob_vegetacion <- st_read("datos/catastro/catastro_lauca_uso.shp", quiet = TRUE)
+snaspe_lauca <- st_read("datos/limites/snaspe_lauca.shp", quiet = TRUE)
+```
+
+### Distribución espacial
+
+El parque presenta tres tipos principales de cobertura vegetal: bosques de queñoa (*Polylepis tarapacana*), humedales alto-andinos (bofedales) y praderas con matorrales. Cada tipo responde de manera diferente a las condiciones climáticas estacionales.
+
+```{r}
+#| label: mapa-ndvi
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 6
+#| fig-width: 12
+
+cob_vegetacion_filtrado <- cob_vegetacion |>
+  filter(USO %in% c("Praderas y Matorrales", "Humedales", "Bosques"))
+
+colores_cobertura <- c(
+  "Bosques" = "#228B22",
+  "Humedales" = "#6495ED",
+  "Praderas y Matorrales" = "#D2B48C"
+)
+
+meses <- as.numeric(sub(".*-(\\d{2})$", "\\1", names(ndvi_lauca)))
+ndvi_lluvioso <- ndvi_lauca[[meses %in% c(12, 1, 2, 3)]]
+ndvi_no_lluvioso <- ndvi_lauca[[meses %in% c(6, 7, 8, 9)]]
+
+ndvi_mediana_lluvioso <- app(ndvi_lluvioso, fun = median, na.rm = TRUE)
+ndvi_mediana_no_lluvioso <- app(ndvi_no_lluvioso, fun = median, na.rm = TRUE)
+
+crs_raster <- crs(ndvi_lauca)
+snaspe_lauca <- st_transform(snaspe_lauca, crs_raster)
+cob_vegetacion_filtrado <- st_transform(cob_vegetacion_filtrado, crs_raster)
+
+p1 <- ggplot() +
+  geom_sf(data = cob_vegetacion_filtrado, aes(fill = USO), color = NA) +
+  geom_sf(data = snaspe_lauca, fill = NA, color = "black", linewidth = 0.2) +
+  scale_fill_manual(values = colores_cobertura, name = "Cobertura") +
+  theme_minimal() +
+  theme(axis.text = element_blank(), axis.ticks = element_blank(),
+        panel.grid = element_blank(), legend.position = "bottom")
+
+p2 <- ggplot() +
+  geom_spatraster(data = ndvi_mediana_lluvioso) +
+  geom_sf(data = snaspe_lauca, fill = NA, color = "black", linewidth = 0.2) +
+  scale_fill_distiller(palette = "Greens", direction = 1, limits = c(0, 0.5),
+                       na.value = "transparent", name = "NDVI") +
+  labs(title = "Período lluvioso") +
+  theme_minimal() +
+  theme(axis.text = element_blank(), panel.grid = element_blank(),
+        legend.position = "none", plot.title = element_text(face = "bold"))
+
+p3 <- ggplot() +
+  geom_spatraster(data = ndvi_mediana_no_lluvioso) +
+  geom_sf(data = snaspe_lauca, fill = NA, color = "black", linewidth = 0.2) +
+  scale_fill_distiller(palette = "Greens", direction = 1, limits = c(0, 0.5),
+                       na.value = "transparent", name = "NDVI") +
+  labs(title = "Período seco") +
+  theme_minimal() +
+  theme(axis.text = element_blank(), panel.grid = element_blank(),
+        legend.position = "bottom", plot.title = element_text(face = "bold"))
+
+fila_ndvi <- p2 + p3 + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+(p1 | fila_ndvi)
+```
+
+### Serie temporal por cobertura
+
+La serie temporal de NDVI (2014-2024) revela patrones distintivos para cada tipo de cobertura. Los humedales presentan los valores más altos pero con mayor variabilidad interanual, posiblemente asociada a fluctuaciones en la disponibilidad hídrica.
 
 ```{r}
 #| label: serie-ndvi
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
 
-# Código para visualizar serie temporal de NDVI
+ndvi_por_cobertura <- exact_extract(ndvi_lauca, cob_vegetacion_filtrado,
+                                    fun = NULL,
+                                    include_cols = "USO", progress = FALSE)
+
+ndvi_largo <- bind_rows(ndvi_por_cobertura) |>
+  select(-coverage_fraction) |>
+  pivot_longer(cols = -USO, names_to = "nombre", values_to = "ndvi_valor") |>
+  mutate(
+    fecha_str = str_extract(nombre, "\\d{4}-\\d{2}"),
+    fecha = ym(fecha_str),
+    agno = year(fecha),
+    mes = month(fecha)
+  ) |>
+  filter(!is.na(ndvi_valor))
+
+ndvi_serie <- ndvi_largo |>
+  group_by(USO, fecha) |>
+  summarise(ndvi_mediana = median(ndvi_valor, na.rm = TRUE), .groups = "drop")
+
+plot_ly() |>
+  add_trace(
+    data = ndvi_serie |> filter(USO == "Bosques"),
+    x = ~fecha, y = ~ndvi_mediana,
+    type = "scatter", mode = "lines",
+    name = "Bosques",
+    line = list(color = "#228B22", width = 2)
+  ) |>
+  add_trace(
+    data = ndvi_serie |> filter(USO == "Humedales"),
+    x = ~fecha, y = ~ndvi_mediana,
+    type = "scatter", mode = "lines",
+    name = "Humedales",
+    line = list(color = "#6495ED", width = 2)
+  ) |>
+  add_trace(
+    data = ndvi_serie |> filter(USO == "Praderas y Matorrales"),
+    x = ~fecha, y = ~ndvi_mediana,
+    type = "scatter", mode = "lines",
+    name = "Praderas y Matorrales",
+    line = list(color = "#D2B48C", width = 2)
+  ) |>
+  layout(
+    xaxis = list(title = "", rangeslider = list(visible = TRUE)),
+    yaxis = list(title = "NDVI (mediana)"),
+    legend = list(orientation = "h", y = -0.2)
+  )
 ```
 
-## Ciclo estacional
+### Ciclo estacional
+
+El ciclo estacional muestra que todas las coberturas alcanzan su máximo de productividad entre enero y abril, coincidiendo con el final de la temporada de lluvias. Los humedales presentan los valores más altos de NDVI pero también la mayor variabilidad interanual, mientras que las praderas y matorrales mantienen valores bajos y estables generalmente durante todo el año.
 
 ```{r}
-#| label: ciclo-estacional
+#| label: estacionalidad-ndvi
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
+#| fig-cap: "Ciclo estacional de NDVI por tipo de cobertura (2014-2024)"
 
-# Código para visualizar ciclo estacional
-```
+colores_cobertura <- c(
+  "Bosques" = "#228B22",
+  "Humedales" = "#6495ED",
+  "Praderas y Matorrales" = "#D2B48C"
+)
 
-## Variables climáticas
+estacionalidad_ndvi <- ndvi_largo |>
+  group_by(USO, mes) |>
+  summarise(
+    promedio = mean(ndvi_valor, na.rm = TRUE),
+    sd = sd(ndvi_valor, na.rm = TRUE),
+    .groups = "drop"
+  )
 
-### Precipitación
-
-```{r}
-#| label: precipitacion
-#| echo: false
-#| message: false
-#| warning: false
-#| eval: false
-
-# Código para visualizar precipitación
-```
-
-### Temperatura
-
-```{r}
-#| label: temperatura
-#| echo: false
-#| message: false
-#| warning: false
-#| eval: false
-
-# Código para visualizar temperatura
+ggplot(estacionalidad_ndvi, aes(x = mes, y = promedio, color = USO, fill = USO)) +
+  annotate("rect", xmin = 0.5, xmax = 3.5, ymin = -Inf, ymax = Inf,
+           fill = "gray80", alpha = 0.3) +
+  annotate("rect", xmin = 11.5, xmax = 12.5, ymin = -Inf, ymax = Inf,
+           fill = "gray80", alpha = 0.3) +
+  geom_ribbon(aes(ymin = promedio - sd, ymax = promedio + sd), alpha = 0.2, color = NA) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_color_manual(values = colores_cobertura) +
+  scale_fill_manual(values = colores_cobertura) +
+  scale_x_continuous(breaks = 1:12, labels = c("Ene", "Feb", "Mar", "Abr", "May", "Jun",
+                                               "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")) +
+  labs(x = NULL, y = "NDVI promedio", color = "Cobertura", fill = "Cobertura",
+       caption = "Banda: ± 1 desviación estándar. Sombreado: estación lluviosa (Dic-Mar)") +
+  theme_minimal() +
+  theme(
+    plot.caption = element_text(color = "black", size = 8),
+    axis.line = element_line(color = "black"),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom"
+  )
 ```
 
 ## Relación NDVI-Clima
 
+El análisis integrado de precipitación y NDVI evidencia el acoplamiento entre disponibilidad hídrica y productividad vegetal en el altiplano. La vegetación responde a las lluvias estivales con un desfase de aproximadamente un mes entre el peak de precipitación (enero-febrero) y el máximo de NDVI (marzo-abril). Los humedales muestran los valores más altos pero también mayor sensibilidad a la variabilidad climática, mientras que las praderas y matorrales mantienen valores bajos y estables independiente de las fluctuaciones en las precipitaciones.
+
 ```{r}
-#| label: correlaciones
+#| label: clima-ndvi
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
+#| fig-height: 9
+#| fig-width: 8
+#| fig-cap: "Relación entre precipitación y productividad vegetal por tipo de cobertura"
 
-# Código para visualizar correlaciones
+precipitaciones <- read_csv("datos/clima/EC_precipitaciones_mensual_ajata.csv")
+
+precipitaciones <- precipitaciones |>
+  mutate(mes = as.numeric(mes)) |>
+  group_by(agno, mes) |>
+  summarise(precipitacion_acumulada_mensual = sum(valor, na.rm = TRUE),
+            .groups = "drop") |>
+  mutate(fecha = make_date(agno, mes, 1))
+
+ndvi_mensual <- ndvi_largo |>
+  group_by(USO, fecha, agno, mes) |>
+  summarise(ndvi_promedio = mean(ndvi_valor, na.rm = TRUE), .groups = "drop")
+
+comparacion <- ndvi_mensual |>
+  left_join(precipitaciones, by = c("fecha", "agno", "mes"))
+
+estacionalidad_comp <- comparacion |>
+  group_by(USO, mes) |>
+  summarise(
+    ndvi_promedio = mean(ndvi_promedio, na.rm = TRUE),
+    ndvi_sd = sd(ndvi_promedio, na.rm = TRUE),
+    precip_promedio = mean(precipitacion_acumulada_mensual, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+factor_escala <- max(estacionalidad_comp$precip_promedio, na.rm = TRUE) /
+  max(estacionalidad_comp$ndvi_promedio, na.rm = TRUE)
+
+ggplot(estacionalidad_comp, aes(x = mes)) +
+  annotate("rect", xmin = 0.5, xmax = 3.5, ymin = -Inf, ymax = Inf,
+           fill = "gray80", alpha = 0.3) +
+  annotate("rect", xmin = 11.5, xmax = 12.5, ymin = -Inf, ymax = Inf,
+           fill = "gray80", alpha = 0.3) +
+  geom_col(aes(y = precip_promedio / factor_escala), fill = "#08519c", alpha = 0.2, width = 0.7) +
+  geom_ribbon(aes(y = ndvi_promedio, ymin = ndvi_promedio - ndvi_sd,
+                  ymax = ndvi_promedio + ndvi_sd, fill = USO),
+              alpha = 0.2, color = NA) +
+  geom_line(aes(y = ndvi_promedio, color = USO), linewidth = 1) +
+  geom_point(aes(y = ndvi_promedio, color = USO), size = 2) +
+  scale_color_manual(values = colores_cobertura) +
+  scale_fill_manual(values = colores_cobertura) +
+  scale_x_continuous(breaks = 1:12, labels = c("Ene", "Feb", "Mar", "Abr", "May", "Jun",
+                                               "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")) +
+  scale_y_continuous(
+    name = "NDVI promedio",
+    sec.axis = sec_axis(~ . * factor_escala, name = "Precipitación (mm)")
+  ) +
+  facet_wrap(~USO, ncol = 1) +
+  labs(x = NULL,
+       caption = "Barras: precipitación mensual promedio. Líneas: NDVI promedio mensual") +
+  theme_minimal() +
+  guides(color = "none", fill = "none") +
+  theme(
+    plot.caption = element_text(color = "black", size = 8),
+    axis.line = element_line(color = "black"),
+    panel.grid = element_blank(),
+    strip.text = element_text(face = "bold", size = 10)
+  )
 ```

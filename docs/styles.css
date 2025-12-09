@@ -1,29 +1,40 @@
 /* Estilos personalizados para el sitio */
-
 /* Colores del altiplano */
 :root {
-  --color-primary: #2d5016;
-  --color-secondary: #8b7355;
-  --color-accent: #4a7c59;
+  --color-primary: #4A7C59;
+  --color-secondary: #ffffff;
+  --color-accent: #2d5016;
 }
 
 /* Navbar */
 .navbar {
-  background-color: var(--color-primary) !important;
+  background-color: #4A7C59 !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar .navbar-nav .nav-link.active {
+  color: #c8e6c9 !important;
 }
 
 /* Títulos */
 h1, h2, h3 {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* Links */
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* Tablas */

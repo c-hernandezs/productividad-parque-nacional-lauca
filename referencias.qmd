@@ -4,16 +4,39 @@ title: "Referencias"
 
 ## Bibliografía
 
-*Sección en desarrollo*
+- Chuvieco, E. (2010). *Teledetección ambiental: La observación de la Tierra desde el espacio*. Editorial Ariel.
+
+- Gao, B. C. (1996). NDVI—A vegetation index based on the remote sensing of vegetation. *Remote Sensing of Environment*, 55(3), 257-270.
+
+- Garreaud, R., Vuille, M., & Clement, A. C. (2003). The climate of the Altiplano: observed current conditions and mechanisms of past changes. *Palaeogeography, Palaeoclimatology, Palaeoecology*, 194(1-3), 5-22.
+
+- Luebert, F., & Pliscoff, P. (2017). *Sinopsis bioclimática y vegetacional de Chile*. Editorial Universitaria.
+
+- Villagrán, C., Armesto, J. J., & Arroyo, M. T. K. (1981). Vegetation in a high Andean transect between Turi and Cerro León in Northern Chile. *Vegetatio*, 48(1), 3-16.
 
 ## Datos
 
-- **Landsat**: USGS/NASA Landsat Program
-- **CR2MET**: Centro de Ciencia del Clima y la Resiliencia (CR2)
-- **Límites SNASPE**: CONAF
+- **Landsat Collection 2**: USGS/NASA Landsat Program. Disponible en [USGS Earth Explorer](https://earthexplorer.usgs.gov/)
 
-## Recursos
+- **CR2MET**: Centro de Ciencia del Clima y la Resiliencia (CR2). Datos de precipitación y temperatura. Disponible en [CR2](https://www.cr2.cl/)
 
-- [Google Earth Engine](https://earthengine.google.com/)
-- [CR2 - Datos climáticos](https://www.cr2.cl/)
-- [CONAF - SNASPE](https://www.conaf.cl/)
+- **Catastro de Vegetación**: CONAF. Catastro de los recursos vegetacionales nativos de Chile.
+
+- **Límites SNASPE**: Corporación Nacional Forestal (CONAF). Sistema Nacional de Áreas Silvestres Protegidas del Estado.
+
+## Software y herramientas
+
+- [R Project](https://www.r-project.org/) - Lenguaje de programación estadística
+- [Google Earth Engine](https://earthengine.google.com/) - Plataforma de procesamiento geoespacial
+- [Quarto](https://quarto.org/) - Sistema de publicación científica
+- [rgee](https://r-spatial.github.io/rgee/) - Interfaz R para Google Earth Engine
+- [terra](https://rspatial.github.io/terra/) - Análisis de datos raster
+- [sf](https://r-spatial.github.io/sf/) - Análisis de datos vectoriales
+
+## Imágenes
+
+- Lago Chungará, Parque Nacional Lauca. Fuente: [CONAF/SERNATUR](https://www.conaf.cl/)
+- Panorámica Parque Nacional Lauca. Fuente: [Viajar es Descubrir](https://viajaresdescubrir.com/)
+- Bofedales altoandinos. Fuente: [Atakama Outdoor](https://atakamaoutdoor.cl/)
+- Reserva de la Biósfera Lauca. Fuente: [BioGeoLab PUCV](https://www.pucv.cl/uuaa/biogeolab/reservas/reserva-de-la-biosfera-lauca)
+- Video Parque Nacional Lauca. Fuente: [Chile Travel](https://www.youtube.com/watch?v=3ccsY1cCObw)

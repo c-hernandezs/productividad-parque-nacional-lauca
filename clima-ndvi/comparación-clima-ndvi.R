@@ -108,3 +108,19 @@ grafico_comparacion <- ggplot(estacionalidad, aes(x = mes)) +
   )
 
 grafico_comparacion
+
+
+# 4) exportar -------------------------------------------------------------
+
+if (!dir.exists("clima-ndvi/figuras")) {
+  dir.create("clima-ndvi/figuras")
+}
+
+ggsave(
+  filename = "clima-ndvi/figuras/clima_ndvi.png",
+  plot = grafico_comparacion,
+  width = 8,
+  height = 9,
+  dpi = 300,
+  bg = "white"
+)

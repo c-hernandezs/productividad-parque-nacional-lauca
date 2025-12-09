@@ -17,7 +17,7 @@ El Parque Nacional Lauca se ubica en la Región de Arica y Parinacota, en el ext
 library(mapview)
 library(sf)
 
-area_estudio <- st_read("datos/limites/snaspe_lauca.shp")
+area_estudio <- st_read("datos/limites/snaspe_lauca.shp", quiet = TRUE)
 
 mapview(area_estudio, 
         col.regions = "#00CD66",
@@ -54,13 +54,8 @@ library(sf)
 library(tidyverse)
 library(plotly)
 
-area_estudio <- st_read("datos/limites/snaspe_lauca.shp")
-cob_suelo <- st_read("datos/catastro/catastro_lauca_uso_filter.shp")
-
-names(cob_suelo)
-head(cob_suelo)
-
-unique(cob_suelo$USO)
+area_estudio <- st_read("datos/limites/snaspe_lauca.shp", quiet = TRUE)
+cob_suelo <- st_read("datos/catastro/catastro_lauca_uso_filter.shp", quiet = TRUE)
 
 cob_suelo <- cob_suelo %>%
   mutate(area_ha = as.numeric(st_area(geometry)) / 10000)
@@ -71,10 +66,6 @@ resumen_cob <- cob_suelo %>%
   summarise(area_ha = sum(area_ha)) %>%
   mutate(porcentaje = round(area_ha / sum(area_ha) * 100, 1))
 
-resumen_cob
-
-## grafico de torta ----
-
 plot_ly(resumen_cob, 
         labels = ~USO, 
         values = ~area_ha, 
@@ -82,8 +73,19 @@ plot_ly(resumen_cob,
         marker = list(colors = c("#228B22", "#6495ED", "#D2B48C")),
         textinfo = 'label+percent',
         hovertemplate = "%{label}<br>%{value:.0f} ha<br>%{percent}<extra></extra>")
-
 ```
+
+#### Galería
+
+![Panorámica del Parque Nacional Lauca. Fuente: [Viajar es Descubrir](https://viajaresdescubrir.com/)](https://viajaresdescubrir.com/wp-content/uploads/2025/07/panoramica-laguna-lauca.jpg)
+
+![Bofedales altoandinos. Fuente: [Atakama Outdoor](https://atakamaoutdoor.cl/)](https://atakamaoutdoor.cl/cdn/shop/files/Lu-Lauca-Austerra-03.jpg?v=1673902113&width=1400)
+
+![Reserva de la Biósfera Lauca. Fuente: [BioGeoLab PUCV](https://www.pucv.cl/uuaa/biogeolab/reservas/reserva-de-la-biosfera-lauca)](https://www.pucv.cl/uuaa/site/artic/20180404/imag/foto_0000000420180404115821.png)
+
+{{< video https://www.youtube.com/watch?v=3ccsY1cCObw >}}
+
+*Video: Documental Lawqa (Lauca) Que el Parque Vuelva a Ser Parque - [Patagonia Latinoamérica](https://www.youtube.com/watch?v=3ccsY1cCObw)*
 
 ## Datos utilizados
 

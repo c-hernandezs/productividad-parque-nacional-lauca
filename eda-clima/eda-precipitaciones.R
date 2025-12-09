@@ -77,3 +77,25 @@ grafico_estacionalidad <- ggplot(estacionalidad, aes(x = factor(mes), y = promed
 grafico_estacionalidad
 
 
+# 4) Exportar gráficos -------------------------------------------------------
+
+if (!dir.exists("eda-clima/figuras")) {
+  dir.create("eda-clima/figuras")
+}
+
+# Exportar gráfico de estacionalidad (ggplot) ----
+ggsave(
+  filename = "eda-clima/figuras/estacionalidad_precipitacion.png",
+  plot = grafico_estacionalidad,
+  width = 8,
+  height = 5,
+  dpi = 300,
+  bg = "white"
+)
+
+# Exportar gráfico interactivo (plotly)----
+htmlwidgets::saveWidget(
+  widget = grafico_serie_plotly,
+  file = "eda-clima/figuras/serie_precipitacion.html",
+  selfcontained = TRUE
+)

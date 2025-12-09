@@ -10,15 +10,15 @@
     "objectID": "resultados.html#variables-climáticas",
     "href": "resultados.html#variables-climáticas",
     "title": "Resultados",
-    "section": "Variables climáticas",
-    "text": "Variables climáticas\n\nPrecipitación\n\n\nTemperatura"
+    "section": "",
+    "text": "La precipitación en el Parque Nacional Lauca presenta un marcado patrón estacional, concentrándose en los meses de verano (diciembre-marzo) debido al “invierno altiplanico”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstacionalidad de precipitación en Parque Nacional Lauca (1983-2024)"
   },
   {
     "objectID": "resultados.html#relación-ndvi-clima",
     "href": "resultados.html#relación-ndvi-clima",
     "title": "Resultados",
     "section": "Relación NDVI-Clima",
-    "text": "Relación NDVI-Clima"
+    "text": "Relación NDVI-Clima\nEl análisis integrado de precipitación y NDVI evidencia el acoplamiento entre disponibilidad hídrica y productividad vegetal en el altiplano. La vegetación responde a las lluvias estivales con un desfase de aproximadamente un mes entre el peak de precipitación (enero-febrero) y el máximo de NDVI (marzo-abril). Los humedales muestran los valores más altos pero también mayor sensibilidad a la variabilidad climática, mientras que las praderas y matorrales mantienen valores bajos y estables independiente de las fluctuaciones en las precipitaciones.\n\n\n\n\n\nRelación entre precipitación y productividad vegetal por tipo de cobertura"
   },
   {
     "objectID": "metodos.html",
@@ -46,14 +46,14 @@
     "href": "metodos.html#análisis-estadístico",
     "title": "Métodos",
     "section": "Análisis estadístico",
-    "text": "Análisis estadístico\n\nSeries temporales\n\nAgregación mensual de NDVI\nCálculo de ciclos estacionales\nAnálisis de anomalías\n\n\n\nRelación clima-vegetación\n\nCorrelaciones NDVI-precipitación\nCorrelaciones NDVI-temperatura\nAnálisis de rezagos temporales"
+    "text": "Análisis estadístico\n\nSeries temporales\n\nAgregación mensual de NDVI\nCálculo de ciclos estacionales\nAnálisis de anomalías\n\n\n\nRelación clima-vegetación\n\nVisualización de patrones estacionales."
   },
   {
     "objectID": "metodos.html#software-utilizado",
     "href": "metodos.html#software-utilizado",
     "title": "Métodos",
     "section": "Software utilizado",
-    "text": "Software utilizado"
+    "text": "Software utilizado\nEl análisis se realizó utilizando los siguientes paquetes de R:\n\nrgee: conexión con Google Earth Engine\nterra: procesamiento de datos raster\nsf: datos espaciales vectoriales\ntidyverse: manipulación y visualización de datos\nggplot2: visualización"
   },
   {
     "objectID": "area-estudio.html",
@@ -74,14 +74,14 @@
     "href": "area-estudio.html#ubicación",
     "title": "Área de Estudio",
     "section": "Ubicación",
-    "text": "Ubicación\n\n\nReading layer `snaspe_lauca' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\limites\\snaspe_lauca.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 1 feature and 12 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495986.5 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S"
+    "text": "Ubicación"
   },
   {
     "objectID": "area-estudio.html#características-ambientales",
     "href": "area-estudio.html#características-ambientales",
     "title": "Área de Estudio",
     "section": "Características ambientales",
-    "text": "Características ambientales\n\nClima\nEl área presenta un clima de altura con:\n\nPrecipitaciones concentradas en verano (diciembre-marzo)\nTemperaturas medias anuales bajas\nAlta radiación solar\nMarcada amplitud térmica diaria\n\n\n\nVegetación\nLos principales tipos de cobertura vegetal incluyen:\n\nBofedales: humedales altoandinos de alta productividad\nMatorrales: dominados por especies arbustivas\nPastizales: vegetación herbácea de altura\n\n\n\nReading layer `snaspe_lauca' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\limites\\snaspe_lauca.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 1 feature and 12 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495986.5 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n\n\nReading layer `catastro_lauca_uso_filter' from data source \n  `C:\\Users\\const\\Desktop\\productividad-lauca\\datos\\catastro\\catastro_lauca_uso_filter.shp' \n  using driver `ESRI Shapefile'\nSimple feature collection with 3 features and 1 field\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495520 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n\n\n[1] \"USO\"      \"geometry\"\n\n\nSimple feature collection with 3 features and 1 field\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 430468.3 ymin: 7958475 xmax: 495520 ymax: 8004144\nProjected CRS: WGS 84 / UTM zone 19S\n                    USO                       geometry\n1 Praderas y Matorrales MULTIPOLYGON (((433458 7985...\n2             Humedales MULTIPOLYGON (((451291.2 79...\n3               Bosques MULTIPOLYGON (((449414.7 79...\n\n\n[1] \"Praderas y Matorrales\" \"Humedales\"             \"Bosques\"              \n\n\n# A tibble: 3 × 3\n  USO                   area_ha porcentaje\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;\n1 Bosques                 1761.        1.6\n2 Humedales               5259.        4.8\n3 Praderas y Matorrales 103110.       93.6"
+    "text": "Características ambientales\n\nClima\nEl área presenta un clima de altura con:\n\nPrecipitaciones concentradas en verano (diciembre-marzo)\nTemperaturas medias anuales bajas\nAlta radiación solar\nMarcada amplitud térmica diaria\n\n\n\nVegetación\nLos principales tipos de cobertura vegetal incluyen:\n\nBofedales: humedales altoandinos de alta productividad\nMatorrales: dominados por especies arbustivas\nPastizales: vegetación herbácea de altura\n\n\n\n\n\n\n\n\nGalería\n\n\n\nPanorámica del Parque Nacional Lauca. Fuente: Viajar es Descubrir\n\n\n\n\n\nBofedales altoandinos. Fuente: Atakama Outdoor\n\n\n\n\n\nReserva de la Biósfera Lauca. Fuente: BioGeoLab PUCV\n\n\n\nVideo: Documental Lawqa (Lauca) Que el Parque Vuelva a Ser Parque - Patagonia Latinoamérica"
   },
   {
     "objectID": "area-estudio.html#datos-utilizados",
@@ -95,21 +95,21 @@
     "href": "index.html",
     "title": "Productividad Vegetal en Parque Nacional Lauca",
     "section": "",
-    "text": "Este sitio presenta los resultados del análisis de productividad vegetal y fenología en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura."
+    "text": "Lago Chungará, Parque Nacional Lauca. Foto: SERNATUR/CONAF"
   },
   {
     "objectID": "index.html#presentación",
     "href": "index.html#presentación",
     "title": "Productividad Vegetal en Parque Nacional Lauca",
-    "section": "",
-    "text": "Este sitio presenta los resultados del análisis de productividad vegetal y fenología en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación y temperatura."
+    "section": "Presentación",
+    "text": "Presentación\nEste sitio presenta los resultados del análisis de productividad vegetal en el Parque Nacional Lauca, ubicado en el altiplano chileno. El estudio utiliza series temporales de NDVI derivadas de imágenes Landsat para el período 2014-2024, junto con datos climáticos de precipitación."
   },
   {
     "objectID": "index.html#objetivos",
     "href": "index.html#objetivos",
     "title": "Productividad Vegetal en Parque Nacional Lauca",
     "section": "Objetivos",
-    "text": "Objetivos\n\nCaracterizar los patrones fenológicos de la vegetación altoandina\nAnalizar la variabilidad interanual de la productividad vegetal\nEvaluar las relaciones entre NDVI y variables climáticas (precipitación y temperatura)"
+    "text": "Objetivos\n\nCaracterizar los patrones de productividad de la vegetación altoandina\nAnalizar la variabilidad interanual de la productividad vegetal\nEvaluar las relaciones entre NDVI y variables climática (precipitación)"
   },
   {
     "objectID": "index.html#contexto",
@@ -145,5 +145,47 @@
     "title": "Referencias",
     "section": "Recursos",
     "text": "Recursos\n\nGoogle Earth Engine\nCR2 - Datos climáticos\nCONAF - SNASPE"
+  },
+  {
+    "objectID": "metodos.html#software",
+    "href": "metodos.html#software",
+    "title": "Métodos",
+    "section": "Software",
+    "text": "Software\nEl análisis se realizó utilizando los siguientes paquetes de R:\n\nrgee: conexión con Google Earth Engine\nterra: procesamiento de datos raster\nsf: datos espaciales vectoriales\ntidyverse: manipulación y visualización de datos\nggplot2: visualización"
+  },
+  {
+    "objectID": "resultados.html",
+    "href": "resultados.html",
+    "title": "Resultados",
+    "section": "",
+    "text": "La precipitación en el Parque Nacional Lauca presenta un marcado patrón estacional, concentrándose en los meses de verano (diciembre-marzo) debido al “invierno altiplanico”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstacionalidad de precipitación en Parque Nacional Lauca (1983-2024)"
+  },
+  {
+    "objectID": "resultados.html#series-temporales-de-ndvi",
+    "href": "resultados.html#series-temporales-de-ndvi",
+    "title": "Resultados",
+    "section": "Series temporales de NDVI",
+    "text": "Series temporales de NDVI\nEl Índice de Vegetación de Diferencia Normalizada (NDVI) permite cuantificar la productividad vegetal a partir de imágenes satelitales. Valores más altos indican mayor actividad fotosintética y biomasa verde.\n\nDistribución espacial\nEl parque presenta tres tipos principales de cobertura vegetal: bosques de queñoa (Polylepis tarapacana), humedales alto-andinos (bofedales) y praderas con matorrales. Cada tipo responde de manera diferente a las condiciones climáticas estacionales.\n\n\n\n\n\n\n\n\n\n\n\nSerie temporal por cobertura\nLa serie temporal de NDVI (2014-2024) revela patrones distintivos para cada tipo de cobertura. Los humedales presentan los valores más altos pero con mayor variabilidad interanual, posiblemente asociada a fluctuaciones en la disponibilidad hídrica.\n\n\n\n\n\n\n\n\nCiclo estacional\nEl ciclo estacional muestra que todas las coberturas alcanzan su máximo de productividad entre enero y abril, coincidiendo con el final de la temporada de lluvias. Los humedales presentan los valores más altos de NDVI pero también la mayor variabilidad interanual, mientras que las praderas y matorrales mantienen valores bajos y estables generalmente durante todo el año.\n\n\n\n\n\nCiclo estacional de NDVI por tipo de cobertura (2014-2024)"
+  },
+  {
+    "objectID": "resultados.html#variable-climática",
+    "href": "resultados.html#variable-climática",
+    "title": "Resultados",
+    "section": "",
+    "text": "La precipitación en el Parque Nacional Lauca presenta un marcado patrón estacional, concentrándose en los meses de verano (diciembre-marzo) debido al “invierno altiplanico”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstacionalidad de precipitación en Parque Nacional Lauca (1983-2024)"
+  },
+  {
+    "objectID": "referencias.html#software-y-herramientas",
+    "href": "referencias.html#software-y-herramientas",
+    "title": "Referencias",
+    "section": "Software y herramientas",
+    "text": "Software y herramientas\n\nR Project - Lenguaje de programación estadística\nGoogle Earth Engine - Plataforma de procesamiento geoespacial\nQuarto - Sistema de publicación científica\nrgee - Interfaz R para Google Earth Engine\nterra - Análisis de datos raster\nsf - Análisis de datos vectoriales"
+  },
+  {
+    "objectID": "referencias.html#imágenes",
+    "href": "referencias.html#imágenes",
+    "title": "Referencias",
+    "section": "Imágenes",
+    "text": "Imágenes\n\nLago Chungará, Parque Nacional Lauca. Fuente: CONAF/SERNATUR\nPanorámica Parque Nacional Lauca. Fuente: Viajar es Descubrir\nBofedales altoandinos. Fuente: Atakama Outdoor\nReserva de la Biósfera Lauca. Fuente: BioGeoLab PUCV\nVideo Parque Nacional Lauca. Fuente: Chile Travel"
   }
 ]

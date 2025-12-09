@@ -7,8 +7,11 @@ library(patchwork)
 library(exactextractr)
 library(plotly)
 
+
 ndvi_lauca <- rast("datos/ndvi/ndvi_lauca_2014_2024.tif")
+
 cob_vegetacion <- st_read("datos/catastro/catastro_lauca_uso.shp")
+
 snaspe_lauca <- st_read("datos/limites/snaspe_lauca.shp")
 
 
@@ -232,3 +235,40 @@ grafico_estacionalidad_ndvi <- ggplot(estacionalidad_ndvi, aes(x = mes, y = prom
   )
 
 grafico_estacionalidad_ndvi
+
+
+# 7) Exportar gráficos ----------------------------------------------------
+
+if (!dir.exists("eda-ndvi/figuras")) {
+  dir.create("eda-ndvi/figuras")
+}
+
+## grafico ndvi por cobertura ----
+
+ggsave(
+  filename = "eda-ndvi/figuras/ndvi_cobertura.png",
+  plot = composicion,
+  width = 12,
+  height = 6,
+  dpi = 300,
+  bg = "white"
+)
+
+## gráfico estacionalidad NDVI ----
+
+ggsave(
+  filename = "eda-ndvi/figuras/estacionalidad_ndvi_cobertura.png",
+  plot = grafico_estacionalidad_ndvi,
+  width = 9,
+  height = 5,
+  dpi = 300,
+  bg = "white"
+)
+
+## gráfico serie temporal (plotly) ----
+
+htmlwidgets::saveWidget(
+  widget = grafico_ndvi_plotly,
+  file = "eda-ndvi/figuras/serie_ndvi_cobertura.html",
+  selfcontained = TRUE
+)
