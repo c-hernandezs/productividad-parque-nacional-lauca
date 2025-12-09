@@ -98,6 +98,11 @@ Este proyecto está dirigido al público general interesado en conservación, es
 **AGP3141 - Visualización de Datos Ambientales en R**  
 *Primavera 2025*
 
+## 🤖 **Herramientas de IA**
+
+Este proyecto fue desarrollado con asistencia de **Claude** (Anthropic) para revisión de código y sincronizar GitHub.
+
+
 🛠️ R - Quarto - sf/tidyverse - plotly - mapview
 
 🗺️ EPSG:4326 - Google Earth Engine
