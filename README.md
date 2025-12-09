@@ -4,13 +4,13 @@
 ---
 
 ## ❓ **Pregunta de Investigación**
-¿Cómo varían los patrones de **productividad vegetal** entre **bofedales, matorrales y bosques** en el Parque Nacional Lauca, y cómo se relacionan con **precipitación y temperatura** (2014-2024)? 🌧️📈
+¿Cómo varían los patrones de **productividad vegetal** entre **bofedales, matorrales y bosques** en el Parque Nacional Lauca, y cómo se relacionan con **precipitación y temperatura**? 🌧️📈
 
 ## 🧪 **Hipótesis Principal**
 **Bofedales** responden más rápido a lluvias, **matorrales** muestran desfases y **bosques** mantienen productividad basal estable.
 
 ## 🎯 **Objetivo**
-Visualizar **patrones fenológicos** de ecosistemas altiplánicos del norte chileno usando **NDVI Landsat** (30m/16 días) y correlacionarlos con variables climáticas CR2MET. 🛰️
+Visualizar **patrones de productividad** de ecosistemas altiplánicos del norte chileno usando **NDVI Landsat** (30m/16 días) y correlacionarlos con variables climáticas CR2MET. 🛰️
 
 ---
 
@@ -20,7 +20,7 @@ Visualizar **patrones fenológicos** de ecosistemas altiplánicos del norte chil
 | Especificación     | Detalle                  |
 |--------------------|--------------------------|
 | **Plataforma**     | Google Earth Engine      |
-| **Período**        | 2014-2024                |
+| **Período**        | Desde 2000              |
 | **Resolución**     | 30m / 16 días            |
 | **Fórmula**        | \( NDVI = \frac{NIR-Red}{NIR+Red} \) |
 | **Formato**        | GeoTIFF                  |
@@ -87,11 +87,12 @@ agp3141-fenologia-ecosistemas-altiplanicos/
 *Primavera 2025*
 
 🛠️ R - Quarto - sf/tidyverse - plotly - mapview
+
 🗺️ EPSG:4326 - Google Earth Engine
 
 
 ---
 
-**¡Explora la dinámica verde del Altiplano!** 🌄✨
+**¡Explora la dinámica del Altiplano!** 🌄✨
 
 
