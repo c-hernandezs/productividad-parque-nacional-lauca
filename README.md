@@ -40,14 +40,14 @@ Visualizar **patrones de productividad** de ecosistemas altiplánicos del norte 
 ```
 agp3141-fenologia-ecosistemas-altiplanicos/
 │
-├── README.md                          # Este archivo
+├── README.md                         
 │
 ├── datos/                             # Datos de entrada
 │   ├── catastro-veg/                  # Coberturas vegetacionales CONAF
 │   │   └── catastro_uso_lauca.shp
 │   ├── limites/                       # Límites de parques nacionales
 │   │   └── snaspe_lauca.shp
-│   ├── ndvi/                          # Series temporales NDVI
+│   ├── ndvi/                          # Series temporales NDVI - Lansat
 │   │   └── serie_ndvi_lauca.tif
 │   └── clima/                         # Datos climáticos CR2MET
 │       ├── precipitacion_2014_2024.csv
@@ -55,25 +55,26 @@ agp3141-fenologia-ecosistemas-altiplanicos/
 │
 ├── eda-clima/                               # Análisis Exploratorio de Datos
 │   ├── codigos/
-│   │   └── eda_clima.R
+│   │   └── eda_precipitaciones.R
 │   └── figuras/
-│       └── plot_serie_prep_acum.png
-│       └── plot_serie_temp_media.png
+│       ├── estacionalidad_precipitacion.png
+│       └── serie_precipitacion.html
 │
 ├── eda-NDVI/                         # Análisis NDVI
 │   ├── codigos/
-│   │   └── NDVI_por_cobsuelo.R
+│   │   └── eda_ndvi.R
 │   │   
 │   └── figuras/
-│       ├── plot_mapas_ndvi_y_serie.png
-│       
+│       ├── estacionalidad_ndvi_coberturas.png
+│       ├── ndvi_coberturas.png
+│       └── serie_ndvi_cobertura.html
 │
-└── NDVI-y-clima/                 # Análisis NDVI-Clima
+└── clima-ndvi/                 # Análisis NDVI-Clima
     ├── codigos/
-    │   ├── comparacion_clima_ndvi.R
-    │   └── visualizacion_comparacion.R
+    │   └── comparacion_clima_ndvi.R
+    │   
     └── figuras/
-        └── plot_series_comparadas.png
+        └── clima_ndvi.png
 
 ````
 
