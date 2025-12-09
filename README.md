@@ -1,55 +1,53 @@
-# Visualización y Análisis de la Dinámica Fenológica de Ecosistemas Altiplánicos mediante Series Temporales NDVI: Parque Nacional Lauca
+# 🌿 **Visualización Dinámica de Productividad Altiplánica** 🏔️
+## Series Temporales NDVI • Parque Nacional Lauca
 
-## Pregunta de Investigación
-¿Cómo varían los patrones de productividad de la vegetación entre diferentes tipos de cobertura vegetal en el Parque Nacional Lauca, y cuál es su relación con la precipitación y temperatura en el período 2014-2024?
+---
 
-## Hipótesis
-Los diferentes tipos de cobertura vegetal en los ecosistemas altiplánicos del Parque Nacional Lauca presentan patrones de productividad diferenciados cuya variabilidad temporal está significativamente determinada por la precipitación, con desfases temporales específicos para cada tipo de cobertura.
+## ❓ **Pregunta de Investigación**
+¿Cómo varían los patrones de productividad vegetal entre bofedales, matorrales y bosques en el Parque Nacional Lauca, y cómo se relacionan con precipitación desde el 2014 al 2024? 🌧️📈
 
-## Objetivo
-Visualizar los patrones de productividad de diferentes tipos de cobertura vegetal en ecosistemas altiplánicos del norte de Chile mediante proxy de productividad primaria con series temporales de NDVI de alta resolución temporal (Landsat, 2014-2024) y evaluar su relación con variables climáticas.
+## 🧪 **Hipótesis Principal**
+**Bofedales** responden más rápido a lluvias, **matorrales** muestran desfases y **bosques** mantienen productividad basal estable.
 
-## Datos 
+## 🎯 **Objetivo**
+Visualizar **patrones de productividad** de ecosistemas altiplánicos del norte chileno usando **NDVI Landsat** (30m/16 días) y correlacionarlos con variables climáticas CR2MET. 🛰️
 
-### Índice espectral
-**Landsat 8/9 (USGS)**
-- **Plataforma:** Google Earth Engine (GEE)
-- **Período:** 2014-01-01 a 2024-12-31
-- **Resolución temporal:** 16 días
-- **Resolución espacial:** 30 m
-- **Bandas utilizadas:** B4 (Red), B5 (NIR), QA_PIXEL (control de calidad)
-- **Índice:** NDVI = (NIR - Red) / (NIR + Red)
-- **Formato:** Raster GeoTIFF
+---
 
-### Clima 
-**CR2MET** (Centro de Ciencia del Clima y la Resiliencia)
-- **Variables:** 
-  - Precipitación (mm/día)
-- **Resolución espacial:** ~5 km (0.05°)
-- **Resolución temporal:** Diaria
-- **Formato:** NetCDF4 / CSV
+## 📊 **Datos Utilizados**
 
-### Área de estudio
-- Parque Nacional Lauca.shp
+### 🛰️ **NDVI Landsat 8/9**
+| Especificación     | Detalle                  |
+|--------------------|--------------------------|
+| **Plataforma**     | Google Earth Engine      |
+| **Período**        | 2014 - 2024              |
+| **Resolución**     | 30m / 16 días            |
+| **Fórmula**        | \( NDVI = \frac{NIR-Red}{NIR+Red} \) |
+| **Formato**        | GeoTIFF                  |
+
+### 🌤️ **CR2MET Clima**
+- **Variables**: Precipitación (mm/día)
+- **Resolución**: ~5km / Diaria
+- **Fuente**: Centro de Ciencia del Clima y la Resiliencia
+
+### 🗺️ **Áreas de Estudio**
+🏔️ Parque Nacional Lauca (SNASPE)
+🌱 Coberturas: Bofedales - Matorrales-pastizales - Bosques (CONAF)
 - **Fuente:** SNASPE (Sistema Nacional de Áreas Silvestres Protegidas del Estado)
 
-### Coberturas Vegetacionales
-- Catastro de uso del suelo CONAF
-- Tipos de cobertura: Humedales, Matorrales-pastizales, Bosques
-- **Formato:** Shapefile (.shp)
 
-## Organización de Carpetas
+## 📁 **Estructura del Proyecto**
 ```
 agp3141-fenologia-ecosistemas-altiplanicos/
 │
-├── README.md                          # Este archivo
+├── README.md                         
 │
 ├── datos/                             # Datos de entrada
 │   ├── catastro-veg/                  # Coberturas vegetacionales CONAF
 │   │   └── catastro_uso_lauca.shp
 │   ├── limites/                       # Límites de parques nacionales
 │   │   └── snaspe_lauca.shp
-│   ├── ndvi/                          # Series temporales NDVI
+│   ├── ndvi/                          # Series temporales NDVI - Lansat
 │   │   └── serie_ndvi_lauca.tif
 │   └── clima/                         # Datos climáticos CR2MET
 │       ├── precipitacion_2014_2024.csv
@@ -57,33 +55,45 @@ agp3141-fenologia-ecosistemas-altiplanicos/
 │
 ├── eda-clima/                               # Análisis Exploratorio de Datos
 │   ├── codigos/
-│   │   └── eda_clima.R
+│   │   └── eda_precipitaciones.R
 │   └── figuras/
-│       └── plot_serie_prep_acum.png
-│       └── plot_serie_temp_media.png
+│       ├── estacionalidad_precipitacion.png
+│       └── serie_precipitacion.html
 │
 ├── eda-NDVI/                         # Análisis NDVI
 │   ├── codigos/
-│   │   └── NDVI_por_cobsuelo.R
+│   │   └── eda_ndvi.R
 │   │   
 │   └── figuras/
-│       ├── plot_mapas_ndvi_y_serie.png
-│       
+│       ├── estacionalidad_ndvi_coberturas.png
+│       ├── ndvi_coberturas.png
+│       └── serie_ndvi_cobertura.html
 │
-└── NDVI-y-clima/                 # Análisis NDVI-Clima
+└── clima-ndvi/                 # Análisis NDVI-Clima
     ├── codigos/
-    │   ├── comparacion_clima_ndvi.R
-    │   └── visualizacion_comparacion.R
+    │   └── comparacion_clima_ndvi.R
+    │   
     └── figuras/
-        └── plot_series_comparadas.png
-```
+        └── clima_ndvi.png
 
-## Autor
-**Constanza Hernández**  
-Magíster en Recursos Naturales  
-Pontificia Universidad Católica de Chile  
-Curso: AGP3141 - Visualización de Datos Ambientales en R  
-Fecha: Primavera 2025
+````
 
 ---
+
+## 👩‍🔬 **Autora**
+**🌟 Constanza Hernández**  
+*Magíster en Recursos Naturales*  
+**Pontificia Universidad Católica de Chile**  
+**AGP3141 - Visualización de Datos Ambientales en R**  
+*Primavera 2025*
+
+🛠️ R - Quarto - sf/tidyverse - plotly - mapview
+
+🗺️ EPSG:4326 - Google Earth Engine
+
+
+---
+
+**¡Explora la dinámica del Altiplano!** 🌄✨
+
 
