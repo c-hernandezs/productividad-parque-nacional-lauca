@@ -32,7 +32,7 @@ precipitaciones_reciente <- precipitaciones |>
   filter(agno >= 2014)
 ```
 
-<iframe src="eda-clima/figuras/serie_precipitacion.html" width="100%" height="450" frameborder="0">
+<iframe src="figuras/serie_precipitacion.html" width="100%" height="450" frameborder="0"></iframe>
 
 </iframe>
 
@@ -195,7 +195,9 @@ ndvi_serie <- ndvi_largo |>
 
 ```
 
-<iframe src="eda-ndvi/figuras/serie_ndvi_cobertura.html" width="100%" height="450" frameborder="0"></iframe>
+<iframe src="figuras/serie_ndvi.html" width="100%" height="450" frameborder="0"></iframe>
+
+</iframe>
 
 ### Ciclo estacional
 
