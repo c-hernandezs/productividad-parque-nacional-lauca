@@ -77,8 +77,19 @@ agp3141-fenologia-ecosistemas-altiplanicos/
         └── clima_ndvi.png
 
 ````
+---
+
+## **Conclusiones**
+
+Los bofedales son los más productivos pero también los más vulnerables: presentan los valores de NDVI más altos, pero su mayor variabilidad interanual indica sensibilidad a las fluctuaciones hídricas.
+Existe un desfase de ~1 mes entre lluvias y respuesta vegetal: el peak de precipitación ocurre en enero-febrero, mientras que el máximo de productividad se alcanza en marzo-abril.
+Praderas y matorrales mantienen estabilidad a costa de baja productividad: sus valores de NDVI se mantienen bajos y constantes independiente de las variaciones climáticas.
 
 ---
+
+## 👥 **Audiencia**
+Este proyecto está dirigido al público general interesado en conservación, especialmente quienes buscan comprender cómo responden los ecosistemas altiplánicos al clima. No requiere conocimientos técnicos previos - las visualizaciones interactivas permiten explorar los datos de forma intuitiva.
+
 
 ## 👩‍🔬 **Autora**
 **🌟 Constanza Hernández**  
