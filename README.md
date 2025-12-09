@@ -4,7 +4,7 @@
 ---
 
 ## ❓ **Pregunta de Investigación**
-¿Cómo varían los patrones de **productividad vegetal** entre **bofedales, matorrales y bosques** en el Parque Nacional Lauca, y cómo se relacionan con **precipitación y temperatura**? 🌧️📈
+¿Cómo varían los patrones de productividad vegetal entre bofedales, matorrales y bosques en el Parque Nacional Lauca, y cómo se relacionan con precipitación desde el 2014 al 2024? 🌧️📈
 
 ## 🧪 **Hipótesis Principal**
 **Bofedales** responden más rápido a lluvias, **matorrales** muestran desfases y **bosques** mantienen productividad basal estable.
@@ -20,13 +20,13 @@ Visualizar **patrones de productividad** de ecosistemas altiplánicos del norte 
 | Especificación     | Detalle                  |
 |--------------------|--------------------------|
 | **Plataforma**     | Google Earth Engine      |
-| **Período**        | Desde 2000              |
+| **Período**        | 2014 - 2024              |
 | **Resolución**     | 30m / 16 días            |
 | **Fórmula**        | \( NDVI = \frac{NIR-Red}{NIR+Red} \) |
 | **Formato**        | GeoTIFF                  |
 
 ### 🌤️ **CR2MET Clima**
-- **Variables**: Precipitación (mm/día), Temperatura (°C)
+- **Variables**: Precipitación (mm/día)
 - **Resolución**: ~5km / Diaria
 - **Fuente**: Centro de Ciencia del Clima y la Resiliencia
 
